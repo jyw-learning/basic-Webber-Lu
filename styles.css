@@ -121,3 +121,14 @@ body {
     background: rgb(122, 21, 176);
     transform: scale(1.1);
 }
+
+/* 設定超連結樣式 */
+.link {
+    text-decoration: none; /* 移除底線 */
+    color: white; /* 設定文字顏色 */
+    font-weight: bold;
+    display: block; /* 讓連結填滿整個按鈕 */
+    width: 100%;
+    height: 100%;
+    line-height: 50px; /* 讓文字垂直置中 */
+}
