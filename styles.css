@@ -156,7 +156,6 @@ body {
     .block-container {
         flex-direction: column; /* 讓按鈕垂直排列 */
         align-items: center; /* 置中排列 */ 
-        left: 0px;
     }
 
     .item {
