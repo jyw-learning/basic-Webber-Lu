@@ -53,6 +53,8 @@ body {
     transition: transform 0.3s ease;
     position: relative;
     z-index: 2; /* 確保卡片在雨滴之上 */
+    display: block; /* 確保卡片是區塊級元素，便於置中 */
+    margin: auto; /* 讓卡片水平置中 */
 }
 
 .card:hover {
@@ -100,7 +102,6 @@ body {
     /*border-radius: 10px;*/
     z-index: 100; /* 確保它顯示在最上層 */
 }
-
 
 /* 點擊按鈕 */
 .item {
