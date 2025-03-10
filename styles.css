@@ -1,3 +1,139 @@
+/* 設定背景顏色與頁面字型 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #41416148; /* 背景顏色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* 讓背景元素疊加在這個容器內 */
+    overflow: hidden; /* 隱藏超出範圍的雨滴 */
+}
+
+/* 設定下雨容器 */
+#rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 雨滴不會影響到頁面上的點擊操作 */
+}
+
+/* 雨滴樣式 */
+.rain-drop {
+    position: absolute;
+    width: 2px; /* 雨滴寬度 */
+    height: 20px; /* 雨滴長度 */
+    background-color: rgba(0, 0, 255, 0.5); /* 藍色雨滴 */
+    opacity: 0.5;
+    animation: fall 2s linear infinite; /* 下落動畫 */
+}
+
+/* 雨滴掉落動畫 */
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh); /* 從畫面上方開始 */
+    }
+    100% {
+        transform: translateY(100vh); /* 掉落到底部 */
+    }
+}
+
+/* 設定卡片樣式 */
+.card {
+    background-color: rgba(79, 80, 86, 0.685);
+    width: 400px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 15px; /* 圓角效果 */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2; /* 確保卡片在雨滴之上 */
+}
+
+.card:hover {
+    transform: scale(1.25); /* 當鼠標懸停時放大 */
+}
+
+/* 設定圖片樣式 */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* 圓形圖片 */
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* 設定名字的樣式 */
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative; /* 設置為相對定位 */
+    top: -20px; /* 向上移動名字 */
+}
+
+/* 設定簡短介紹的樣式 */
+.bio {
+    font-size: 20px;
+    color: #121212;
+    line-height: 1.5;
+    margin: 0;
+    position: relative; /* 設置為相對定位 */
+    top: -10px; /* 向上移動簡短介紹 */
+}
+
+/* 按鈕區塊（移動到左上角） */
+.block-container {
+    position: absolute; /* 讓按鈕區塊固定在視窗內 */
+    top: 0px;  
+    left: 0px; 
+    width: 100%;  /* 設置寬度為100% */
+    display: flex;
+    background: rgb(79, 82, 149);
+    padding: 10px;
+    /*border-radius: 10px;*/
+    z-index: 100; /* 確保它顯示在最上層 */
+}
+
+
+/* 點擊按鈕 */
+.item {
+    width: 120px;
+    height: 50px;
+    background: rgb(47, 154, 115);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.item:hover {
+    background: rgb(122, 21, 176);
+    transform: scale(1.1);
+}
+
+/* 設定超連結樣式 */
+.link {
+    text-decoration: none; /* 移除底線 */
+    color: white; /* 設定文字顏色 */
+    font-weight: bold;
+    display: block; /* 讓連結填滿整個按鈕 */
+    width: 100%;
+    height: 100%;
+    line-height: 50px; /* 讓文字垂直置中 */
+}
+
 /* 媒體查詢: 螢幕寬度小於 768px */
 @media (max-width: 768px) {
     /* 調整卡片的寬度為100% */
@@ -26,5 +162,31 @@
     .item {
         width: 100%;  /* 按鈕佔滿整個區塊 */
         margin: 5px 0;  /* 上下間距 */
+    }
+}
+
+/* 媒體查詢: 螢幕寬度小於 480px */
+@media (max-width: 480px) {
+    .name {
+        font-size: 18px;
+    }
+
+    .bio {
+        font-size: 16px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .item {
+        font-size: 14px;  /* 調整按鈕文字大小 */
+    }
+
+    /* 調整按鈕區塊兩邊空隙 */
+    .block-container {
+        margin-left: 10px;  /* 左邊距離 */
+        margin-right: 10px; /* 右邊距離 */
     }
 }
