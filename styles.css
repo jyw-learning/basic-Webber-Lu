@@ -95,7 +95,7 @@ body {
     left: 0px; 
     width: 100%;  /* 設置寬度為100% */
     display: flex;
-    background: rgb(149, 79, 149);
+    background: rgb(79, 82, 149);
     padding: 10px;
     /*border-radius: 10px;*/
     z-index: 100; /* 確保它顯示在最上層 */
@@ -154,7 +154,9 @@ body {
     /* 調整按鈕區塊的排列方式 */
     .block-container {
         flex-direction: column; /* 讓按鈕垂直排列 */
-        align-items: center; /* 置中排列 */
+        align-items: center; /* 置中排列 */        
+        padding-left: 10px; /* 左邊距離 */
+        padding-right: 10px; /* 右邊距離 */
     }
 
     .item {
