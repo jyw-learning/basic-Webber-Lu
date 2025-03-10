@@ -156,6 +156,7 @@ body {
     .block-container {
         flex-direction: column; /* 讓按鈕垂直排列 */
         align-items: center; /* 置中排列 */ 
+        left: 0px;
     }
 
     .item {
@@ -181,11 +182,5 @@ body {
 
     .item {
         font-size: 14px;  /* 調整按鈕文字大小 */
-    }
-
-    /* 調整按鈕區塊兩邊空隙 */
-    .block-container {
-        margin-left: 10px;  /* 左邊距離 */
-        margin-right: 10px; /* 右邊距離 */
     }
 }
