@@ -160,7 +160,7 @@ body {
     }
 
     .item {
-        width: 100%;  /* 按鈕佔滿整個區塊 */
+        width: 80%;  
         margin: 5px 0;  /* 上下間距 */
         margin: auto;
     }
