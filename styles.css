@@ -90,6 +90,9 @@ body {
 
 /* 按鈕區塊 */
 .block-container {
+    position: absolute; /* 讓它固定在視窗內 */
+    top: 20px;  /* 距離視窗頂部 20px */
+    left: 20px; /* 距離視窗左側 20px */
     display: flex;
     background: lightgray;
     padding: 10px;
