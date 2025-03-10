@@ -93,17 +93,18 @@ body {
     position: absolute; /* 讓按鈕區塊固定在視窗內 */
     top: 0px;  
     left: 0px; 
+    width: 100%;  /* 設置寬度為100% */
     display: flex;
-    background: white;
+    background: rgb(178, 54, 108);
     padding: 10px;
     border-radius: 10px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     z-index: 100; /* 確保它顯示在最上層 */
 }
 
+
 /* 點擊按鈕 */
 .item {
-    width: 100%;
+    width: 120px;
     height: 50px;
     background: rgb(47, 154, 115);
     color: white;
