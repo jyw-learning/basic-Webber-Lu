@@ -140,6 +140,7 @@ body {
     .card {
         width: 90%;  /* 讓卡片寬度佔滿90%的螢幕 */
         padding: 15px;
+        margin: auto;  /* 讓卡片水平置中 */
     }
 
     /* 調整文字大小 */
