@@ -156,8 +156,6 @@ body {
     .block-container {
         flex-direction: column; /* 讓按鈕垂直排列 */
         align-items: center; /* 置中排列 */ 
-        margin-left: 20px;  /* 左邊距離 */
-        margin-right: 20px; /* 右邊距離 */
     }
 
     .item {
