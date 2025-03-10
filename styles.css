@@ -162,6 +162,7 @@ body {
     .item {
         width: 100%;  /* 按鈕佔滿整個區塊 */
         margin: 5px 0;  /* 上下間距 */
+        margin: auto;
     }
 }
 
