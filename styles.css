@@ -91,8 +91,8 @@ body {
 /* 按鈕區塊（移動到左上角） */
 .block-container {
     position: absolute; /* 讓按鈕區塊固定在視窗內 */
-    top: 20px;  /* 距離視窗頂部 20px */
-    left: 20px; /* 距離視窗左側 20px */
+    top: 5px;  
+    left: 5px; 
     display: flex;
     background: lightgray;
     padding: 10px;
@@ -105,7 +105,7 @@ body {
 .item {
     width: 120px;
     height: 50px;
-    background: steelblue;
+    background: rgb(47, 154, 115);
     color: white;
     text-align: center;
     line-height: 50px;
@@ -118,6 +118,6 @@ body {
 }
 
 .item:hover {
-    background: dodgerblue;
+    background: rgb(122, 21, 176);
     transform: scale(1.1);
 }
