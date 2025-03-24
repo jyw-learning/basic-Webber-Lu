@@ -74,7 +74,6 @@ body {
 
 .card:hover {
     transform: scale(1.05);
-    /* 當鼠標懸停時放大 */
 }
 
 /* 設定圖片樣式 */
@@ -119,8 +118,7 @@ body {
     /* 設置寬度為100% */
     display: flex;
     background: rgb(79, 82, 149);
-    padding: 10px;
-    /*border-radius: 10px;*/
+    padding: 0px;
     z-index: 100;
     /* 確保它顯示在最上層 */
 }
@@ -129,12 +127,12 @@ body {
 .item {
     width: 120px;
     height: 50px;
-    background: rgb(47, 154, 115);
+    /* background: rgb(47, 154, 115); */
     color: white;
     text-align: center;
     line-height: 50px;
-    margin: 5px;
-    border-radius: 8px;
+    margin: 0px;
+    /* border-radius: 8px; */
     font-size: 16px;
     font-weight: bold;
     transition: background 0.3s, transform 0.2s;
@@ -142,8 +140,9 @@ body {
 }
 
 .item:hover {
-    background: rgb(122, 21, 176);
-    transform: scale(1.1);
+    background: white;       /* 滑鼠移入時變白底 */
+    color: black;            /* 文字變黑 */
+    transform: none;           /* 移除放大效果 */
 }
 
 /* 設定超連結樣式 */
