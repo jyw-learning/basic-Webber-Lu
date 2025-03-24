@@ -145,6 +145,11 @@ body {
     transform: none;           /* 移除放大效果 */
 }
 
+.item:hover .link {
+    color: black;
+}
+
+
 /* 設定超連結樣式 */
 .link {
     text-decoration: none;
