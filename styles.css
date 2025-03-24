@@ -28,15 +28,9 @@ body {
 /* 雨滴樣式 */
 .rain-drop {
     position: absolute;
-    width: 2px;
-    /* 雨滴寬度 */
-    height: 20px;
-    /* 雨滴長度 */
-    background-color: rgba(0, 0, 255, 0.5);
-    /* 藍色雨滴 */
-    opacity: 0.5;
-    animation: fall 2s linear infinite;
-    /* 下落動畫 */
+    background-color: rgba(0, 0, 255, 0.7); /* 更清楚的藍色 */
+    animation: fall linear infinite;
+    box-shadow: 0 0 4px rgba(0, 0, 255, 0.4); /* 光暈效果 */
 }
 
 /* 雨滴掉落動畫 */
@@ -49,6 +43,30 @@ body {
     100% {
         transform: translateY(100vh);
         /* 掉落到底部 */
+    }
+}
+
+/* 水花擴散樣式 */
+.splash {
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background-color: rgba(0, 0, 255, 0.5);
+    border-radius: 50%;
+    animation: splash-effect 0.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 水花動畫 */
+@keyframes splash-effect {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
     }
 }
 
@@ -141,7 +159,6 @@ body {
 
 .item:hover {
     background: white;       /* 滑鼠移入時變白底 */
-    color: black;            /* 文字變黑 */
     transform: none;           /* 移除放大效果 */
 }
 
