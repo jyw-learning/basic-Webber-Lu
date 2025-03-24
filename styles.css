@@ -31,6 +31,7 @@ body {
     background-color: rgba(0, 0, 255, 0.7); /* 更清楚的藍色 */
     animation: fall linear infinite;
     box-shadow: 0 0 4px rgba(0, 0, 255, 0.4); /* 光暈效果 */
+    z-index: 0;
 }
 
 /* 雨滴掉落動畫 */
