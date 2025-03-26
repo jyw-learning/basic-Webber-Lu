@@ -43,3 +43,7 @@ function createRaindrop() {
 
 // 每 100 毫秒創建一顆雨滴
 setInterval(createRaindrop, 100);
+
+function showMore() {
+    alert("更多！");
+}
