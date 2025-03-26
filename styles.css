@@ -243,3 +243,71 @@ body {
         /* 調整按鈕文字大小 */
     }
 }
+
+/* 包整個開關區 */
+.rain-toggle-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* 開關主體 */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* 隱藏原始 checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* 背景滑軌 */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  /* 滑動圓點 */
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  /* ON 狀態樣式 */
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  
+  /* ON / OFF 文字樣式 */
+  .toggle-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    user-select: none;
+  }
+  

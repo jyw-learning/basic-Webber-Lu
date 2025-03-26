@@ -47,3 +47,17 @@ setInterval(createRaindrop, 100);
 function showMore() {
     alert("更多！");
 }
+
+let rainInterval = setInterval(createRaindrop, 100);
+
+function toggleRain(checkbox) {
+  const label = document.getElementById("toggleLabel");
+
+  if (checkbox.checked) {
+    rainInterval = setInterval(createRaindrop, 100);
+    label.textContent = "ON";
+  } else {
+    clearInterval(rainInterval);
+    label.textContent = "OFF";
+  }
+}
