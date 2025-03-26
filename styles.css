@@ -247,7 +247,7 @@ body {
 /* 包整個開關區 */
 .rain-toggle-wrapper {
     position: absolute;
-    top: 10px;
+    top: 13px;
     right: 10px;
     z-index: 200;
     display: flex;
@@ -259,8 +259,8 @@ body {
   .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 45px;
+    height: 24px;
   }
   
   /* 隱藏原始 checkbox */
@@ -285,10 +285,10 @@ body {
   .slider::before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
@@ -300,11 +300,13 @@ body {
   }
   
   input:checked + .slider::before {
-    transform: translateX(26px);
+    transform: translateX(21px);
   }
   
   /* ON / OFF 文字樣式 */
   .toggle-label {
+    position:relative;  
+    top:-2px;  
     font-weight: bold;
     font-size: 16px;
     color: white;
