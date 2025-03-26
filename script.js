@@ -41,23 +41,21 @@ function createRaindrop() {
     }, duration * 1000);
 }
 
-// 每 100 毫秒創建一顆雨滴
-setInterval(createRaindrop, 100);
-
 function showMore() {
     alert("更多！");
 }
 
-let rainInterval = setInterval(createRaindrop, 100);
+let rainInterval = null; // 預設不會下雨
 
 function toggleRain(checkbox) {
   const label = document.getElementById("toggleLabel");
 
   if (checkbox.checked) {
     rainInterval = setInterval(createRaindrop, 100);
-    label.textContent = "ON";
+    label.textContent = "🌧️";
   } else {
     clearInterval(rainInterval);
-    label.textContent = "OFF";
+    rainInterval = null;
+    label.textContent = "☀️";
   }
 }
