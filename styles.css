@@ -162,6 +162,7 @@ body {
 
 .item:hover {
     background: white;       /* 滑鼠移入時變白底 */
+    color: black;
     transform: none;           /* 移除放大效果 */
 }
 
