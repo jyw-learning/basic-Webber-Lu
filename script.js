@@ -52,7 +52,7 @@ function toggleRain(checkbox) {
 
   if (checkbox.checked) {
     rainInterval = setInterval(createRaindrop, 100);
-    label.textContent = "🌧️";
+    label.textContent = "☔";
   } else {
     clearInterval(rainInterval);
     rainInterval = null;
