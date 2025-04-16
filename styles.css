@@ -14,17 +14,20 @@ body {
   /* 霧氣背景動畫層 */
   .fog-layer {
     position: absolute;
-    width: 200%;
-    height: 200%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background:
-      radial-gradient(circle at 30% 30%, rgba(123, 104, 238, 0.15), transparent 60%),
-      radial-gradient(circle at 70% 70%, rgba(72, 209, 204, 0.15), transparent 60%);
+      radial-gradient(circle at 30% 30%, rgba(123, 104, 238, 0.3), transparent 60%),
+      radial-gradient(circle at 70% 70%, rgba(72, 209, 204, 0.3), transparent 60%);
     background-repeat: no-repeat;
     background-size: 200% 200%;
     animation: foggyBackground 20s ease-in-out infinite alternate;
     z-index: 0;
     pointer-events: none;
   }
+  
   
   
   @keyframes foggyBackground {
