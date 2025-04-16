@@ -311,4 +311,18 @@ body {
     color: white;
     user-select: none;
   }
+ 
+  /* 放在滑動圓點中的圖示 */
+.slider .icon {
+    position: absolute;
+    left: 6px;
+    bottom: 4px;
+    font-size: 14px;
+    transition: 0.4s;
+    pointer-events: none;
+  }
   
+  /* 開啟時：滑塊移動，圖示也移動並變更內容 */
+  input:checked + .slider .icon {
+    transform: translateX(21px);
+  }
