@@ -121,7 +121,10 @@ body {
     height: 100%;
     line-height: 50px;
   }
-  
+
+  .link:hover {
+    color: black;
+  }
   /* ----------- 響應式設計 ----------- */
   
   /* 螢幕寬度小於 768px */
