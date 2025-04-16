@@ -110,8 +110,7 @@ body {
 /* 設定名字的樣式 */
 .name {
     font-size: 24px;
-    font-weight: bold;
-    color: #ffdf9f;
+    color: #DDEEFF;
     margin-bottom: 10px;
     position: relative;
     /* 設置為相對定位 */
@@ -122,7 +121,7 @@ body {
 /* 設定簡短介紹的樣式 */
 .bio {
     font-size: 20px;
-    color: #ffdf9f;
+    color: #DDEEFF;
     line-height: 1.5;
     margin: 0;
     position: relative;
@@ -294,7 +293,7 @@ body {
     border-radius: 50%;
   }
   
-  /* ON 狀態樣式 */
+  /* ☀️狀態樣式 */
   input:checked + .slider {
     background-color: #4caf50;
   }
