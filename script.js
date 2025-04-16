@@ -48,14 +48,11 @@ function showMore() {
 let rainInterval = null; // 預設不會下雨
 
 function toggleRain(checkbox) {
-  const icon = document.querySelector('.slider .icon');
-
   if (checkbox.checked) {
     rainInterval = setInterval(createRaindrop, 100);
-    icon.textContent = "🌧️";
   } else {
     clearInterval(rainInterval);
     rainInterval = null;
-    icon.textContent = "☀️";
   }
 }
+

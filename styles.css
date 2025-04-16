@@ -301,28 +301,34 @@ body {
   input:checked + .slider::before {
     transform: translateX(21px);
   }
-  
-  /* ON / OFF 文字樣式 */
-  .toggle-label {
-    position:relative;  
-    top:-2px;  
-    font-weight: bold;
-    font-size: 16px;
-    color: white;
-    user-select: none;
-  }
- 
-  /* 放在滑動圓點中的圖示 */
+
+ /* 圖示統一樣式 */
 .slider .icon {
     position: absolute;
-    left: 6px;
-    bottom: 4px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 14px;
-    transition: 0.4s;
     pointer-events: none;
+    transition: opacity 0.3s;
   }
   
-  /* 開啟時：滑塊移動，圖示也移動並變更內容 */
-  input:checked + .slider .icon {
-    transform: translateX(21px);
+  /* 左邊的圖示（下雨） */
+  .slider .icon.left {
+    left: 6px;
+    opacity: 0; /* 預設隱藏 */
   }
+  
+  /* 右邊的圖示（太陽） */
+  .slider .icon.right {
+    right: 6px;
+    opacity: 1; /* 預設顯示 */
+  }
+  
+  /* 勾選時：下雨圖示顯示、太陽隱藏 */
+  input:checked + .slider .icon.left {
+    opacity: 1;
+  }
+  input:checked + .slider .icon.right {
+    opacity: 0;
+  }
+  
