@@ -1,334 +1,169 @@
-/* 設定背景顏色與頁面字型 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #41416148;
-    /* 背景顏色 */
+    background: linear-gradient(to bottom, #4f5056, #ffffff);
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-    /* 讓背景元素疊加在這個容器內 */
     overflow: hidden;
-    /* 隱藏超出範圍的雨滴 */
+    position: relative;
     z-index: 0;
-}
-
-/* 設定下雨容器 */
-#rain-container {
+  }
+  
+  /* 霧氣背景動畫層 */
+  .fog-layer {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05), transparent 60%);
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    animation: foggyBackground 20s ease-in-out infinite alternate;
+    z-index: 0;
     pointer-events: none;
-    /* 雨滴不會影響到頁面上的點擊操作 */
-    z-index: 0;
-}
-
-/* 雨滴樣式 */
-.rain-drop {
-    position: absolute;
-    background-color: rgba(0, 0, 255, 0.7); /* 更清楚的藍色 */
-    animation: fall linear infinite;
-    box-shadow: 0 0 4px rgba(0, 0, 255, 0.4); /* 光暈效果 */
-    z-index: 0;
-}
-
-/* 雨滴掉落動畫 */
-@keyframes fall {
+  }
+  
+  @keyframes foggyBackground {
     0% {
-        transform: translateY(-100vh);
-        /* 從畫面上方開始 */
-    }
-
-    100% {
-        transform: translateY(100vh);
-        /* 掉落到底部 */
-    }
-}
-
-/* 水花擴散樣式 */
-.splash {
-    position: absolute;
-    width: 6px;
-    height: 2px;
-    background-color: rgba(0, 0, 255, 0.5);
-    border-radius: 50%;
-    animation: splash-effect 0.5s ease-out forwards;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* 水花動畫 */
-@keyframes splash-effect {
-    0% {
-        transform: scale(0.5);
-        opacity: 0.8;
+      transform: translate(0%, 0%);
     }
     100% {
-        transform: scale(3);
-        opacity: 0;
+      transform: translate(-10%, -10%);
     }
-}
-
-/* 設定卡片樣式 */
-.card {
+  }
+  
+  /* 卡片樣式 */
+  .card {
     background-color: rgba(79, 80, 86, 0.685);
     width: 400px;
     padding: 20px;
     border: 2px solid #ddd;
     border-radius: 15px;
-    /* 圓角效果 */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
     position: relative;
-    z-index: 100;
-    /* 確保卡片在雨滴之上 */
-    display: block;
-    /* 確保卡片是區塊級元素，便於置中 */
+    z-index: 10;
     margin: auto;
-    /* 讓卡片水平置中 */
-}
-
-.card:hover {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
     transform: scale(1.05);
-}
-
-/* 設定圖片樣式 */
-.profile-img {
+  }
+  
+  .profile-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    /* 圓形圖片 */
     object-fit: cover;
     margin-bottom: 20px;
-}
-
-/* 設定名字的樣式 */
-.name {
+  }
+  
+  .name {
     font-size: 24px;
     color: #DDEEFF;
     margin-bottom: 10px;
     position: relative;
-    /* 設置為相對定位 */
     top: -20px;
-    /* 向上移動名字 */
-}
-
-/* 設定簡短介紹的樣式 */
-.bio {
+  }
+  
+  .bio {
     font-size: 20px;
     color: #DDEEFF;
     line-height: 1.5;
     margin: 0;
     position: relative;
     top: -10px;
-}
-
-/* 按鈕區塊（移動到左上角） */
-.block-container {
+  }
+  
+  /* 上方按鈕列 */
+  .block-container {
     position: absolute;
-    /* 讓按鈕區塊固定在視窗內 */
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
-    /* 設置寬度為100% */
     display: flex;
     background: rgb(79, 82, 149);
-    padding: 0px;
+    padding: 0;
     z-index: 100;
-    /* 確保它顯示在最上層 */
-}
-
-/* 點擊按鈕 */
-.item {
+  }
+  
+  .item {
     width: 120px;
     height: 50px;
-    /* background: rgb(47, 154, 115); */
     color: white;
     text-align: center;
     line-height: 50px;
-    margin: 0px;
-    /* border-radius: 8px; */
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
     cursor: pointer;
-}
-
-.item:hover {
-    background: white;       /* 滑鼠移入時變白底 */
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .item:hover {
+    background: white;
     color: black;
-    transform: none;           /* 移除放大效果 */
-}
-
-.item:hover .link {
-    color: black;
-}
-
-
-/* 設定超連結樣式 */
-.link {
+  }
+  
+  .link {
     text-decoration: none;
-    /* 移除底線 */
     color: white;
-    /* 設定文字顏色 */
     font-weight: bold;
     display: block;
-    /* 讓連結填滿整個按鈕 */
     width: 100%;
     height: 100%;
     line-height: 50px;
-    /* 讓文字垂直置中 */
-}
-
-/* 媒體查詢: 螢幕寬度小於 768px */
-@media (max-width: 768px) {
-
-    /* 調整卡片的寬度為100% */
+  }
+  
+  /* ----------- 響應式設計 ----------- */
+  
+  /* 螢幕寬度小於 768px */
+  @media (max-width: 768px) {
     .card {
-        width: 90%;
-        /* 讓卡片寬度佔滿90%的螢幕 */
-        padding: 15px;
-        margin: auto;
-        /* 讓卡片水平置中 */
+      width: 90%;
+      padding: 15px;
+      margin: auto;
     }
-
-    /* 調整文字大小 */
+  
     .name {
-        font-size: 20px;
+      font-size: 20px;
     }
-
+  
     .bio {
-        font-size: 18px;
+      font-size: 18px;
     }
-
-    /* 調整按鈕區塊的排列方式 */
+  
     .block-container {
-        flex-direction: column;
-        /* 讓按鈕垂直排列 */
-        align-items: center;
-        /* 置中排列 */
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     .item {
-        width: 80%;
-        margin: 5px 0;
-        /* 上下間距 */
-        margin: auto;
+      width: 80%;
+      margin: 5px 0;
+      margin: auto;
     }
-}
-
-/* 媒體查詢: 螢幕寬度小於 480px */
-@media (max-width: 480px) {
+  }
+  
+  /* 螢幕寬度小於 480px */
+  @media (max-width: 480px) {
     .name {
-        font-size: 18px;
+      font-size: 18px;
     }
-
+  
     .bio {
-        font-size: 16px;
+      font-size: 16px;
     }
-
+  
     .profile-img {
-        width: 150px;
-        height: 150px;
+      width: 150px;
+      height: 150px;
     }
-
+  
     .item {
-        font-size: 14px;
-        /* 調整按鈕文字大小 */
+      font-size: 14px;
     }
-}
-
-/* 包整個開關區 */
-.rain-toggle-wrapper {
-    position: absolute;
-    top: 13px;
-    right: 10px;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* 開關主體 */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 45px;
-    height: 24px;
-  }
-  
-  /* 隱藏原始 checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* 背景滑軌 */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0;
-    right: 0; bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
-  }
-  
-  /* 滑動圓點 */
-  .slider::before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  /* ☀️狀態樣式 */
-  input:checked + .slider {
-    background-color: #4caf50;
-  }
-  
-  input:checked + .slider::before {
-    transform: translateX(21px);
-  }
-
- /* 圖示統一樣式 */
-.slider .icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  
-  /* 左邊的圖示（下雨） */
-  .slider .icon.left {
-    left: 6px;
-    opacity: 0; /* 預設隱藏 */
-  }
-  
-  /* 右邊的圖示（太陽） */
-  .slider .icon.right {
-    right: 6px;
-    opacity: 1; /* 預設顯示 */
-  }
-  
-  /* 勾選時：下雨圖示顯示、太陽隱藏 */
-  input:checked + .slider .icon.left {
-    opacity: 1;
-  }
-  input:checked + .slider .icon.right {
-    opacity: 0;
   }
   
