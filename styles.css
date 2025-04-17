@@ -14,30 +14,34 @@ body {
   /* 霧氣背景動畫層 */
   .fog-layer {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(circle at 30% 30%, rgba(123, 104, 238, 0.3), transparent 60%),
-      radial-gradient(circle at 70% 70%, rgba(72, 209, 204, 0.3), transparent 60%);
-    background-repeat: no-repeat;
-    background-size: 200% 200%;
-    background-position: 0% 0%;
-    animation: foggyBackground 20s ease-in-out infinite alternate;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
     z-index: 0;
     pointer-events: none;
   }
   
+  .fog-circle {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123, 104, 238, 0.2), transparent 70%);
+    animation: floatFog1 60s ease-in-out infinite alternate;
+  }
   
+  .fog2 {
+    background: radial-gradient(circle, rgba(72, 209, 204, 0.2), transparent 70%);
+    animation: floatFog2 90s ease-in-out infinite alternate;
+  }
   
-  @keyframes foggyBackground {
-    0% {
-      transform: translate(0%, 0%);
-    }
-    100% {
-      transform: translate(20%, 20%);
-    }
+  @keyframes floatFog1 {
+    0% { transform: translate(-20%, -10%) scale(1); }
+    100% { transform: translate(10%, 20%) scale(1.05); }
+  }
+  
+  @keyframes floatFog2 {
+    0% { transform: translate(10%, 10%) scale(1); }
+    100% { transform: translate(-15%, -10%) scale(1.08); }
   }
   
   /* 卡片樣式 */
@@ -91,7 +95,7 @@ body {
     left: 0;
     width: 100%;
     display: flex;
-    background: rgb(79, 82, 149);   
+    background: rgb(79, 82, 149);
     padding: 0;
     z-index: 100;
   }
@@ -108,7 +112,8 @@ body {
     transition: background 0.3s, transform 0.2s;
   }
   
-  .item:hover {
+  .item:hover,
+  .item:hover .link {
     background: white;
     color: black;
   }
@@ -121,14 +126,10 @@ body {
     width: 100%;
     height: 100%;
     line-height: 50px;
+    transition: color 0.3s ease;
   }
-
-  .link:hover {
-    color: black;
-  }
-  /* ----------- 響應式設計 ----------- */
   
-  /* 螢幕寬度小於 768px */
+  /* 響應式設計 */
   @media (max-width: 768px) {
     .card {
       width: 90%;
@@ -156,7 +157,6 @@ body {
     }
   }
   
-  /* 螢幕寬度小於 480px */
   @media (max-width: 480px) {
     .name {
       font-size: 18px;
