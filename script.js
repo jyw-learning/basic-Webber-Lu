@@ -26,3 +26,17 @@ function toggleCat() {
     });
   }
 }
+
+function returnToCard() {
+  const card = document.getElementById("profileCard");
+  const catGallery = document.getElementById("catGallery");
+  const backButton = document.getElementById("backButton");
+
+  catGallery.classList.remove("show");
+  backButton.style.display = "none";
+
+  setTimeout(() => {
+    catGallery.style.display = "none";
+    card.style.display = "block";
+  }, 500); // 與圖片淡出時間一致
+}
