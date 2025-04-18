@@ -6,13 +6,20 @@ function toggleCat() {
   const card = document.getElementById("profileCard");
   const catGallery = document.getElementById("catGallery");
 
-  const isCatVisible = catGallery.style.display === "block";
+  const isCatVisible = catGallery.classList.contains("show");
 
-  card.style.display = isCatVisible ? "block" : "none";
-  catGallery.style.display = isCatVisible ? "none" : "block";
-}
-
-function returnToCard() {
-  document.getElementById("profileCard").style.display = "block";
-  document.getElementById("catGallery").style.display = "none";
+  if (isCatVisible) {
+    catGallery.classList.remove("show");
+    setTimeout(() => {
+      catGallery.style.display = "none";
+    }, 300); // 稍微延遲，讓動畫先結束
+    card.style.display = "block";
+  } else {
+    card.style.display = "none";
+    catGallery.style.display = "flex";
+    // 確保 display 設定好後再加 class
+    setTimeout(() => {
+      catGallery.classList.add("show");
+    }, 10);
+  }
 }
