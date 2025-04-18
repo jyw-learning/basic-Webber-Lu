@@ -6,13 +6,21 @@ function toggleCat() {
   const card = document.getElementById("profileCard");
   const catGallery = document.getElementById("catGallery");
 
-  const isCatVisible = catGallery.style.display === "block";
+  const isCatVisible = catGallery.classList.contains("show");
 
-  card.style.display = isCatVisible ? "block" : "none";
-  catGallery.style.display = isCatVisible ? "none" : "block";
-}
+  if (isCatVisible) {
+    catGallery.classList.remove("show");
+    setTimeout(() => {
+      catGallery.style.display = "none";
+    }, 500); // 延遲隱藏，讓淡出有時間跑
+    card.style.display = "block";
+  } else {
+    card.style.display = "none";
+    catGallery.style.display = "flex";
 
-function returnToCard() {
-  document.getElementById("profileCard").style.display = "block";
-  document.getElementById("catGallery").style.display = "none";
+    // 等畫面顯示後再加 show class，動畫才會觸發
+    requestAnimationFrame(() => {
+      catGallery.classList.add("show");
+    });
+  }
 }
