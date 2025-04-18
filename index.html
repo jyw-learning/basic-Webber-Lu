@@ -21,12 +21,21 @@
     <p class="bio">嗨，我是中原電機的碩一生，目前正學習打造個人網站，如果你覺得自我介紹很短，沒錯，是真的很短 ~</p>
   </div>
 
+  <!-- 貓貓 -->
+  <div class="cat-gallery" id="catGallery" style="display: none;">
+    <img src="IMG_7095.JPEG" class="cat-photo" alt="cat1">
+    <img src="IMG_7497.JPEG" class="cat-photo" alt="cat2">
+    <img src="IMG_7533.JPEG" class="cat-photo" alt="cat3">
+    <button class="back-button" onclick="returnToCard()">🔙 返回主頁</button>
+  </div>
+
   <!-- 按鈕區塊 -->
   <div class="block-container">
     <div class="item">
       <a href="https://github.com/Webber-Lu" class="link">關於我</a>
     </div>
     <div class="item" onclick="showMore()">點擊查看更多</div>
+    <div class="item" onclick="toggleCat()">貓貓🐱</div>
   </div>
 
   <script src="script.js"></script>

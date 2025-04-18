@@ -25,12 +25,12 @@ body {
     width: 150%;
     height: 150%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(123, 104, 238, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(123, 104, 238, 0.35), transparent 70%);
     animation: floatFog1 60s ease-in-out infinite alternate;
   }
   
   .fog2 {
-    background: radial-gradient(circle, rgba(72, 209, 204, 0.2), transparent 70%);
+    background: radial-gradient(circle, rgba(72, 209, 204, 0.35), transparent 70%);
     animation: floatFog2 90s ease-in-out infinite alternate;
   }
   
@@ -129,6 +129,38 @@ body {
     transition: color 0.3s ease;
   }
   
+  .cat-gallery {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .cat-photo {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .back-button {
+    width: 200px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #4f5056;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+  }
+  
   /* 響應式設計 */
   @media (max-width: 768px) {
     .card {
@@ -155,6 +187,15 @@ body {
       margin: 5px 0;
       margin: auto;
     }
+
+    .cat-photo {
+        width: 90%;
+      }
+    
+      .cat-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
   }
   
   @media (max-width: 480px) {
