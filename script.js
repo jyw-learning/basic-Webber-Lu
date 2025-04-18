@@ -12,14 +12,15 @@ function toggleCat() {
     catGallery.classList.remove("show");
     setTimeout(() => {
       catGallery.style.display = "none";
-    }, 300); // 稍微延遲，讓動畫先結束
+    }, 300);
     card.style.display = "block";
   } else {
     card.style.display = "none";
     catGallery.style.display = "flex";
-    // 確保 display 設定好後再加 class
-    setTimeout(() => {
+
+    // ✅ 等畫面更新完再加 .show，確保 transition 生效
+    requestAnimationFrame(() => {
       catGallery.classList.add("show");
-    }, 10);
+    });
   }
 }
