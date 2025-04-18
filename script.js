@@ -6,21 +6,13 @@ function toggleCat() {
   const card = document.getElementById("profileCard");
   const catGallery = document.getElementById("catGallery");
 
-  const isCatVisible = catGallery.classList.contains("show");
+  const isCatVisible = catGallery.style.display === "block";
 
-  if (isCatVisible) {
-    catGallery.classList.remove("show");
-    setTimeout(() => {
-      catGallery.style.display = "none";
-    }, 300);
-    card.style.display = "block";
-  } else {
-    card.style.display = "none";
-    catGallery.style.display = "flex";
+  card.style.display = isCatVisible ? "block" : "none";
+  catGallery.style.display = isCatVisible ? "none" : "block";
+}
 
-    // ✅ 等畫面更新完再加 .show，確保 transition 生效
-    requestAnimationFrame(() => {
-      catGallery.classList.add("show");
-    });
-  }
+function returnToCard() {
+  document.getElementById("profileCard").style.display = "block";
+  document.getElementById("catGallery").style.display = "none";
 }
