@@ -11,7 +11,7 @@
         z-index: 0;
     }
     
-    /* 霧氣背景動畫層 */
+    /* 動畫背景層 */
     .fog-layer {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
